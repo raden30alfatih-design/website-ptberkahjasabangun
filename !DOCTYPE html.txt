@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT BERKAH JASA BANGUN | Perusahaan Konstruksi Terpercaya</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Markdown Parser untuk output AI -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // Dark blue for trust/corporate
+                        secondary: '#f97316', // Orange for construction/caution aesthetic
+                        dark: '#111827',
+                        light: '#f3f4f6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for things tailwind might make too verbose */
+        .hero-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1541888086225-ee1ea3994ddb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .service-card:hover .service-icon {
+            color: white;
+            background-color: #f97316;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-primary text-white flex items-center justify-center rounded font-heading font-bold text-xl mr-2">
+                        BJB
+                    </div>
+                    <span class="font-heading font-bold text-2xl text-primary tracking-tight">BERKAH JASA<span class="text-secondary"> BANGUN</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#beranda" class="text-gray-800 hover:text-secondary font-medium transition duration-300">Beranda</a>
+                    <a href="#tentang" class="text-gray-800 hover:text-secondary font-medium transition duration-300">Tentang Kami</a>
+                    <a href="#layanan" class="text-gray-800 hover:text-secondary font-medium transition duration-300">Layanan</a>
+                    <a href="#proyek" class="text-gray-800 hover:text-secondary font-medium transition duration-300">Proyek</a>
+                    <a href="#ai-planner" class="text-gray-800 hover:text-secondary font-medium transition duration-300">✨ AI Planner</a>
+                    <a href="#kontak" class="bg-secondary text-white px-6 py-2 rounded-md font-medium hover:bg-orange-600 transition duration-300 shadow-lg shadow-orange-500/30">Hubungi Kami</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-800 hover:text-secondary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#beranda" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-secondary hover:bg-gray-50 rounded-md">Beranda</a>
+                <a href="#tentang" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-secondary hover:bg-gray-50 rounded-md">Tentang Kami</a>
+                <a href="#layanan" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-secondary hover:bg-gray-50 rounded-md">Layanan</a>
+                <a href="#proyek" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-secondary hover:bg-gray-50 rounded-md">Proyek</a>
+                <a href="#ai-planner" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-secondary hover:bg-gray-50 rounded-md">✨ AI Planner</a>
+                <a href="#kontak" class="block px-3 py-3 text-base font-medium text-secondary font-bold hover:bg-gray-50 rounded-md">Hubungi Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-bg h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="md:w-2/3">
+                <span class="inline-block py-1 px-3 rounded-full bg-secondary/20 text-secondary font-semibold text-sm mb-4 border border-secondary/30 backdrop-blur-sm">Mitra Konstruksi Terbaik Anda</span>
+                <h1 class="text-4xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
+                    Membangun Fondasi <br/><span class="text-secondary">Masa Depan</span> yang Kokoh
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl">
+                    PT Berkah Jasa Bangun hadir untuk mewujudkan setiap visi arsitektur dan konstruksi Anda dengan standar kualitas, keamanan, dan presisi tertinggi.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#proyek" class="bg-secondary text-white px-8 py-3 rounded-md font-medium text-lg hover:bg-orange-600 transition duration-300 text-center">Lihat Portofolio</a>
+                    <a href="#kontak" class="bg-white/10 text-white border border-white/30 backdrop-blur-sm px-8 py-3 rounded-md font-medium text-lg hover:bg-white hover:text-primary transition duration-300 text-center">Konsultasi Gratis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="bg-primary py-10 relative z-10 -mt-10 mx-4 md:mx-auto max-w-6xl rounded-lg shadow-2xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-white/20">
+            <div class="px-4">
+                <div class="text-4xl font-heading font-bold text-white mb-2">15+</div>
+                <div class="text-gray-300 text-sm md:text-base">Tahun Pengalaman</div>
+            </div>
+            <div class="px-4">
+                <div class="text-4xl font-heading font-bold text-white mb-2">120+</div>
+                <div class="text-gray-300 text-sm md:text-base">Proyek Selesai</div>
+            </div>
+            <div class="px-4">
+                <div class="text-4xl font-heading font-bold text-white mb-2">50+</div>
+                <div class="text-gray-300 text-sm md:text-base">Tenaga Ahli</div>
+            </div>
+            <div class="px-4">
+                <div class="text-4xl font-heading font-bold text-white mb-2">100%</div>
+                <div class="text-gray-300 text-sm md:text-base">Kepuasan Klien</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <!-- Image -->
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -inset-4 bg-secondary/20 transform -skew-y-3 rounded-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Konstruksi Bangunan" class="relative rounded-xl shadow-xl w-full object-cover h-[500px]">
+                    
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-xl flex items-center gap-4 hidden md:flex">
+                        <div class="bg-primary/10 p-3 rounded-full text-primary text-2xl">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <p class="font-heading font-bold text-gray-900">Sertifikasi ISO</p>
+                            <p class="text-sm text-gray-500">Standar Mutu Terjamin</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Text -->
+                <div class="md:w-1/2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-1 bg-secondary"></div>
+                        <h4 class="text-secondary font-bold uppercase tracking-wider text-sm">Tentang Kami</h4>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-6">Membangun Kepercayaan Melalui <span class="text-primary">Kualitas Nyata</span></h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        PT Berkah Jasa Bangun (BJB) adalah perusahaan swasta nasional yang bergerak di bidang jasa konstruksi, arsitektur, dan manajemen proyek. Berdiri sejak tahun 2011, kami telah dipercaya oleh berbagai instansi pemerintah maupun swasta untuk menangani proyek-proyek berskala menengah hingga besar.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Komitmen kami adalah memberikan hasil yang inovatif, efisien, dan tepat waktu dengan tetap mengutamakan standar Keselamatan dan Kesehatan Kerja (K3) dalam setiap tahapan proyek.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-secondary mt-1"></i>
+                            <span class="text-gray-700 font-medium">Material berkualitas tinggi dan terstandarisasi</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-secondary mt-1"></i>
+                            <span class="text-gray-700 font-medium">Tim insinyur dan teknisi bersertifikat profesional</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-secondary mt-1"></i>
+                            <span class="text-gray-700 font-medium">Transparansi anggaran dan ketepatan waktu pengerjaan</span>
+                        </li>
+                    </ul>
+
+                    <a href="#kontak" class="inline-flex items-center gap-2 text-primary font-bold hover:text-secondary transition duration-300">
+                        Kenali Kami Lebih Jauh <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="w-10 h-1 bg-secondary"></div>
+                    <h4 class="text-secondary font-bold uppercase tracking-wider text-sm">Layanan Kami</h4>
+                    <div class="w-10 h-1 bg-secondary"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Solusi Konstruksi Terintegrasi</h2>
+                <p class="text-gray-600">Kami menawarkan layanan menyeluruh mulai dari tahap perencanaan, perancangan, hingga eksekusi pembangunan untuk berbagai kebutuhan infrastruktur.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition duration-300 border-b-4 border-transparent hover:border-secondary group">
+                    <div class="service-icon w-16 h-16 bg-primary/10 text-primary flex items-center justify-center rounded-lg text-3xl mb-6 transition-all duration-300">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-dark mb-3 group-hover:text-primary transition duration-300">Konstruksi Gedung</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Pembangunan gedung perkantoran, apartemen, hotel, dan fasilitas publik dengan standar struktur yang kokoh dan aman.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition duration-300 border-b-4 border-transparent hover:border-secondary group">
+                    <div class="service-icon w-16 h-16 bg-primary/10 text-primary flex items-center justify-center rounded-lg text-3xl mb-6 transition-all duration-300">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-dark mb-3 group-hover:text-primary transition duration-300">Desain & Arsitektur</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Perencanaan desain fasad, interior, dan lanskap yang estetis, fungsional, serta sesuai dengan kebutuhan spesifik klien.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition duration-300 border-b-4 border-transparent hover:border-secondary group">
+                    <div class="service-icon w-16 h-16 bg-primary/10 text-primary flex items-center justify-center rounded-lg text-3xl mb-6 transition-all duration-300">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-dark mb-3 group-hover:text-primary transition duration-300">Infrastruktur Sipil</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Pengerjaan proyek infrastruktur seperti jalan raya, jembatan, saluran drainase, dan fasilitas industri berskala besar.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition duration-300 border-b-4 border-transparent hover:border-secondary group">
+                    <div class="service-icon w-16 h-16 bg-primary/10 text-primary flex items-center justify-center rounded-lg text-3xl mb-6 transition-all duration-300">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-dark mb-3 group-hover:text-primary transition duration-300">Renovasi & Pemeliharaan</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Peremajaan bangunan lama, perluasan area, perbaikan struktur, serta pemeliharaan fasilitas secara berkala.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition duration-300 border-b-4 border-transparent hover:border-secondary group">
+                    <div class="service-icon w-16 h-16 bg-primary/10 text-primary flex items-center justify-center rounded-lg text-3xl mb-6 transition-all duration-300">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-dark mb-3 group-hover:text-primary transition duration-300">Manajemen Proyek</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Pengawasan dan pengelolaan proyek konstruksi untuk memastikan efisiensi biaya, mutu yang terjamin, dan waktu yang tepat.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition duration-300 border-b-4 border-transparent hover:border-secondary group">
+                    <div class="service-icon w-16 h-16 bg-primary/10 text-primary flex items-center justify-center rounded-lg text-3xl mb-6 transition-all duration-300">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-dark mb-3 group-hover:text-primary transition duration-300">Perumahan Khusus</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Pembangunan kawasan residensial, cluster, maupun rumah mewah pribadi (custom home) dengan material eksklusif.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section id="proyek" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl mb-6 md:mb-0">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-1 bg-secondary"></div>
+                        <h4 class="text-secondary font-bold uppercase tracking-wider text-sm">Portofolio Kami</h4>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark">Proyek Pilihan <span class="text-primary">Berkah Jasa Bangun</span></h2>
+                </div>
+                <div class="flex gap-2">
+                    <button class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition duration-300">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition duration-300">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gedung Perkantoran Sudirman" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition duration-300">
+                        <p class="text-secondary text-sm font-bold mb-2">KONSTRUKSI GEDUNG</p>
+                        <h3 class="text-white text-xl font-heading font-bold mb-2">Menara Kencana, Jakarta</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500 delay-100">Pembangunan gedung perkantoran 25 lantai dengan konsep green building.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1541888086225-ee1ea3994ddb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Proyek Jembatan" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition duration-300">
+                        <p class="text-secondary text-sm font-bold mb-2">INFRASTRUKTUR</p>
+                        <h3 class="text-white text-xl font-heading font-bold mb-2">Jembatan Lintas Kota, Bandung</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500 delay-100">Proyek infrastruktur jembatan bentang panjang membelah sungai utama kota.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Perumahan Elit" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition duration-300">
+                        <p class="text-secondary text-sm font-bold mb-2">RESIDENSIAL</p>
+                        <h3 class="text-white text-xl font-heading font-bold mb-2">Cluster Asri Residence, Bogor</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500 delay-100">Pembangunan 50 unit rumah eksklusif dengan fasilitas clubhouse modern.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-md font-bold hover:bg-primary hover:text-white transition duration-300">Lihat Semua Proyek</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white/5 border border-white/10"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary/20 blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-6">Siap Memulai Proyek Konstruksi Anda Berikutnya?</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-8 text-lg">Hubungi tim ahli kami hari ini untuk mendiskusikan rencana pembangunan Anda. Dapatkan konsultasi dan estimasi biaya secara gratis!</p>
+            <a href="#kontak" class="inline-block bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-orange-600 transition duration-300 shadow-lg shadow-orange-500/40">Hubungi Kami Sekarang</a>
+        </div>
+    </section>
+
+    <!-- AI Project Planner Section -->
+    <section id="ai-planner" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="w-10 h-1 bg-secondary"></div>
+                    <h4 class="text-secondary font-bold uppercase tracking-wider text-sm">Konsultan AI Kami</h4>
+                    <div class="w-10 h-1 bg-secondary"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">Rencanakan Proyek Anda dengan AI</h2>
+                <p class="text-gray-600">Ceritakan ide bangunan atau renovasi Anda. AI kami akan memberikan perkiraan tahapan, rekomendasi material, dan estimasi waktu agar Anda mendapat gambaran awal sebelum konsultasi resmi.</p>
+            </div>
+
+            <div class="bg-light p-8 rounded-2xl shadow-inner border border-gray-200">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="ai-prompt">Deskripsi Proyek Impian Anda</label>
+                    <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition h-32 resize-none" id="ai-prompt" placeholder="Contoh: Saya ingin membangun rumah minimalis 2 lantai di lahan 10x15m. Butuh 4 kamar tidur, ada taman kecil di dalam, dan area parkir untuk 2 mobil."></textarea>
+                </div>
+                <button onclick="generatePlan()" id="btn-generate-plan" class="w-full sm:w-auto bg-gradient-to-r from-primary to-blue-700 text-white font-bold py-3 px-8 rounded-lg hover:shadow-lg hover:-translate-y-0.5 transition duration-300 flex justify-center items-center gap-2">
+                    <span>✨ Analisis & Buat Rencana Proyek</span>
+                </button>
+                
+                <!-- AI Output Box -->
+                <div id="ai-output-container" class="mt-8 hidden">
+                    <h3 class="text-xl font-bold text-dark mb-4 border-b pb-2">Hasil Analisis AI</h3>
+                    <div id="ai-output" class="prose max-w-none text-gray-700 bg-white p-6 rounded-lg shadow-sm border border-gray-200"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 bg-white rounded-2xl shadow-xl overflow-hidden">
+                
+                <!-- Contact Info -->
+                <div class="lg:w-2/5 bg-dark text-white p-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-secondary/20 rounded-bl-full"></div>
+                    <div class="absolute bottom-0 left-0 w-40 h-40 bg-primary/50 rounded-tr-full"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-heading font-bold mb-2">Informasi Kontak</h3>
+                        <p class="text-gray-400 mb-10">Silakan hubungi kami untuk pertanyaan, penawaran harga, atau diskusi proyek.</p>
+                        
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 text-secondary">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Alamat Kantor</h4>
+                                    <p class="text-gray-400 leading-relaxed">Gedung BJB Tower Lt. 5<br>Jl. Jend. Sudirman No. 123<br>Jakarta Selatan, 12190</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 text-secondary">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Telepon</h4>
+                                    <p class="text-gray-400">(021) 555-0198</p>
+                                    <p class="text-gray-400">+62 812-3456-7890 (WhatsApp)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 text-secondary">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <p class="text-gray-400">info@berkahjasabangun.co.id</p>
+                                    <p class="text-gray-400">proyek@berkahjasabangun.co.id</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <h4 class="font-bold mb-4">Ikuti Kami</h4>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:w-3/5 p-10">
+                    <h3 class="text-2xl font-heading font-bold text-dark mb-6">Kirim Pesan</h3>
+                    <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim. Tim kami akan segera menghubungi Anda.');">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nama Lengkap</label>
+                                <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition" type="text" id="name" placeholder="Masukkan nama Anda" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Alamat Email</label>
+                                <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition" type="email" id="email" placeholder="nama@email.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">Subjek / Layanan</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition" id="subject">
+                                <option>Pertanyaan Umum</option>
+                                <option>Konsultasi Konstruksi Gedung</option>
+                                <option>Layanan Renovasi</option>
+                                <option>Penawaran Kerja Sama</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex justify-between items-end mb-2">
+                                <label class="block text-gray-700 text-sm font-bold" for="message">Pesan Anda</label>
+                                <button type="button" onclick="enhanceMessage()" id="btn-enhance" class="text-xs bg-purple-100 text-purple-700 hover:bg-purple-200 py-1.5 px-3 rounded-full font-semibold transition flex items-center gap-1 shadow-sm">
+                                    ✨ Perbagus Bahasa
+                                </button>
+                            </div>
+                            <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition h-32 resize-none" id="message" placeholder="Jelaskan kebutuhan konstruksi Anda..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition duration-300 flex justify-center items-center gap-2">
+                            <span>Kirim Pesan</span> <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-8 h-8 bg-primary text-white flex items-center justify-center rounded font-heading font-bold mr-2">BJB</div>
+                        <span class="font-heading font-bold text-xl text-white">BERKAH JASA BANGUN</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                        Mitra terpercaya untuk solusi konstruksi, arsitektur, dan pengembangan infrastruktur dengan kualitas terbaik dan profesionalisme tinggi.
+                    </p>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#beranda" class="hover:text-secondary transition duration-300"><i class="fas fa-chevron-right text-xs mr-2 text-secondary"></i>Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-secondary transition duration-300"><i class="fas fa-chevron-right text-xs mr-2 text-secondary"></i>Tentang Kami</a></li>
+                        <li><a href="#layanan" class="hover:text-secondary transition duration-300"><i class="fas fa-chevron-right text-xs mr-2 text-secondary"></i>Layanan</a></li>
+                        <li><a href="#proyek" class="hover:text-secondary transition duration-300"><i class="fas fa-chevron-right text-xs mr-2 text-secondary"></i>Portofolio</a></li>
+                        <li><a href="#kontak" class="hover:text-secondary transition duration-300"><i class="fas fa-chevron-right text-xs mr-2 text-secondary"></i>Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Layanan Utama</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-secondary transition duration-300">Konstruksi Gedung Komersial</a></li>
+                        <li><a href="#" class="hover:text-secondary transition duration-300">Infrastruktur & Sipil</a></li>
+                        <li><a href="#" class="hover:text-secondary transition duration-300">Desain & Arsitektur</a></li>
+                        <li><a href="#" class="hover:text-secondary transition duration-300">Renovasi Bangunan</a></li>
+                        <li><a href="#" class="hover:text-secondary transition duration-300">Manajemen Proyek</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Buletin Kami</h4>
+                    <p class="text-sm text-gray-400 mb-4">Dapatkan update terbaru seputar proyek dan tren konstruksi terkini.</p>
+                    <form class="flex" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Email Anda" class="bg-gray-800 text-white px-4 py-2 w-full rounded-l-md focus:outline-none focus:ring-1 focus:ring-secondary border border-gray-700">
+                        <button class="bg-secondary text-white px-4 py-2 rounded-r-md hover:bg-orange-600 transition">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500">
+                    &copy; 2023 PT Berkah Jasa Bangun. Hak Cipta Dilindungi Undang-Undang.
+                </p>
+                <div class="text-sm text-gray-500 flex gap-4">
+                    <a href="#" class="hover:text-white transition">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-white transition">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scrolled state (add shadow/bg opacity)
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
+                navbar.classList.remove('bg-white');
+            } else {
+                navbar.classList.add('bg-white');
+                navbar.classList.remove('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+
+        // --- Gemini API Logic ---
+        const apiKey = ""; // Diset otomatis oleh environment eksekusi
+
+        async function fetchGemini(prompt, systemInstruction = "") {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }]
+            };
+            
+            if (systemInstruction) {
+                payload.systemInstruction = { parts: [{ text: systemInstruction }] };
+            }
+
+            // Implementasi Exponential Backoff (Maksimal 5 kali percobaan)
+            const maxRetries = 5;
+            const baseDelay = 1000;
+
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, AI tidak dapat menghasilkan respons.";
+                } catch (error) {
+                    if (i === maxRetries - 1) {
+                        console.error("Gemini API Error:", error);
+                        return "Terjadi kesalahan saat menghubungi server AI. Pastikan API key Anda valid dan coba lagi nanti.";
+                    }
+                    await new Promise(res => setTimeout(res, baseDelay * Math.pow(2, i))); // 1s, 2s, 4s, 8s, 16s
+                }
+            }
+        }
+
+        async function generatePlan() {
+            const promptInput = document.getElementById('ai-prompt').value;
+            if (!promptInput.trim()) {
+                alert("Silakan ceritakan deskripsi proyek Anda terlebih dahulu.");
+                return;
+            }
+
+            const btn = document.getElementById('btn-generate-plan');
+            const outputContainer = document.getElementById('ai-output-container');
+            const outputDiv = document.getElementById('ai-output');
+
+            // Mengubah state tombol menjadi loading
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Menganalisis...`;
+            btn.disabled = true;
+            outputContainer.classList.remove('hidden');
+            outputDiv.innerHTML = '<p class="text-gray-500 italic">AI sedang menyiapkan tahapan proyek, estimasi waktu, dan rekomendasi material. Mohon tunggu...</p>';
+
+            const systemPrompt = `Anda adalah konsultan ahli arsitektur dan konstruksi dari PT Berkah Jasa Bangun (BJB). 
+            Tugas Anda: Berikan panduan awal yang ringkas mengenai 1) Tahapan pengerjaan kasar, 2) Bahan material utama yang dibutuhkan, 3) Estimasi kasar waktu pengerjaan (berdasarkan pengalaman umum), dan 4) Saran profesional untuk proyek yang dideskripsikan pengguna.
+            Gunakan format Markdown dengan bullet points atau list angka agar rapi. Gunakan bahasa Indonesia yang profesional, suportif, dan meyakinkan bahwa tim BJB siap membantu proyek ini.`;
+
+            const responseText = await fetchGemini(promptInput, systemPrompt);
+            
+            // Konversi output markdown ke HTML menggunakan Marked.js
+            outputDiv.innerHTML = marked.parse(responseText);
+
+            // Mengembalikan state tombol
+            btn.innerHTML = `<span>✨ Analisis & Buat Rencana Proyek</span>`;
+            btn.disabled = false;
+        }
+
+        async function enhanceMessage() {
+            const messageInput = document.getElementById('message');
+            const btn = document.getElementById('btn-enhance');
+            
+            if (!messageInput.value.trim()) {
+                alert("Tuliskan draf pesan Anda terlebih dahulu agar AI dapat memperbaikinya.");
+                return;
+            }
+
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Memproses...`;
+            btn.disabled = true;
+
+            const systemPrompt = `Anda adalah asisten cerdas yang membantu klien dari perusahaan konstruksi PT Berkah Jasa Bangun. 
+            Tugas Anda: Tulis ulang draf pesan klien agar bahasanya terdengar jauh lebih profesional, sopan, jelas, dan meyakinkan ketika dikirim ke tim konstruksi kami.
+            PENTING: JANGAN menambahkan informasi palsu yang tidak ada di draf asli (seperti ukuran tanah, budget, dll). Hanya perbaiki tata bahasa dan strukturnya. Keluarkan HANYA teks pesannya saja, tanpa kata pengantar apapun.`;
+
+            const responseText = await fetchGemini(`Tolong perbagus pesan ini: "${messageInput.value}"`, systemPrompt);
+            
+            if (!responseText.includes("Terjadi kesalahan")) {
+                messageInput.value = responseText.trim();
+            }
+
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    </script>
+</body>
+</html>
