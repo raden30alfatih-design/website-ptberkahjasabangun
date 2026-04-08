@@ -437,21 +437,21 @@
                 <!-- Contact Form -->
                 <div class="lg:w-3/5 p-10">
                     <h3 class="text-2xl font-heading font-bold text-dark mb-6">Kirim Pesan</h3>
-                    <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim. Tim kami akan segera menghubungi Anda.');">
+                    <form action="https://formspree.io/f/xbdpboyy" method="POST">
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nama Lengkap</label>
-                                <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition" type="text" id="name" placeholder="Masukkan nama Anda" required>
+                                <input name="nama" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary" required>
                             </div>
                             <div>
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Alamat Email</label>
-                                <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition" type="email" id="email" placeholder="nama@email.com" required>
+                                <input type="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary" required>
                             </div>
                         </div>
                         
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">Subjek / Layanan</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition" id="subject">
+                            <select name="layanan" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary">
                                 <option>Pertanyaan Umum</option>
                                 <option>Konsultasi Konstruksi Gedung</option>
                                 <option>Layanan Renovasi</option>
@@ -466,7 +466,7 @@
                                     ✨ Perbagus Bahasa
                                 </button>
                             </div>
-                            <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition h-32 resize-none" id="message" placeholder="Jelaskan kebutuhan konstruksi Anda..." required></textarea>
+                            <textarea name="pesan" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
                         </div>
                         
                         <button type="submit" class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition duration-300 flex justify-center items-center gap-2">
